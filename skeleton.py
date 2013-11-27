@@ -1,46 +1,28 @@
 # Docs at: http://www.pygame.org/docs/ref/index.html
 
-import pygame, os
-
-class Kitten(pygame.sprite.Sprite):
-  def __init__(self):
-    pygame.sprite.Sprite.__init__(self) #call Sprite intializer
-    self.image = load_image('kitten.jpg')
-    self.rect = self.image.get_rect()
-    self.rect.center = (250, 250)
-
-  def update(self):
-    self.rect.topleft = pygame.mouse.get_pos()
-
-def load_image(imageName):
-  fullPath = os.path.join("images", imageName)
-
-  try:
-    image = pygame.image.load(fullPath)
-    if image.get_alpha() is None:
-      image = image.convert()
-    else:
-      image = image.convert_alpha()
-
-  except pygame.error, message:
-    print "Cannot load image: %s" % (fullPath)
-    raise SystemExit, message
-
-  return image
+import pygame
+from sprite import *
+from text import *
 
 def main():
+  # Initialize pygame and setup the window 
   pygame.init()
   screen = pygame.display.set_mode((500, 500))
 
+  # Set a white background, same size as window
   background = pygame.Surface(screen.get_size())
   background.fill((250, 250, 250))
 
-  kitten = Kitten()
+  # Create a text object at position 10, 10
+  text = Text('Pyladies', (10, 10))
+
+  # Create a sprite and add it to a list of sprites to render
+  kitten = Sprite('kitten.jpg')
   allsprites = pygame.sprite.RenderPlain((kitten))
 
   running = True
   while running:
-    #Handle Input Events
+    # Handle input events from the user
     for event in pygame.event.get():
       if event.type == pygame.QUIT:
           running = False
@@ -48,6 +30,8 @@ def main():
     kitten.update()
 
     screen.blit(background, (0, 0))
+    screen.blit(text.surface, text.position)
+
     allsprites.draw(screen) 
     pygame.display.update()
 
