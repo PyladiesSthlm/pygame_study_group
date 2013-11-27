@@ -1,6 +1,10 @@
-
 * Download pygame for your OS at:
 http://www.pygame.org/download.shtml
 
 * Check that you can run the skeleton game
 python skeleton.py
+
+* Put any images you want to load in the 'images' folder
+
+More info:
+The pygame docs can be found at: http://www.pygame.org/docs/ref/index.html

@@ -1,5 +1,3 @@
-# Docs at: http://www.pygame.org/docs/ref/index.html
-
 import pygame
 from sprite import *
 from text import *
