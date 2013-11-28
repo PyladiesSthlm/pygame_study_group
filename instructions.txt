@@ -1,5 +1,5 @@
-* Download pygame for your OS at:
-http://www.pygame.org/download.shtml
+* Install dependencies with pip:
+pip install -r requirements.txt
 
 * Check that you can run the skeleton game
 python skeleton.py
