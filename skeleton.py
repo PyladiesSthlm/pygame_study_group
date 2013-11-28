@@ -37,10 +37,17 @@ def main():
 
     # Handle input events from the user
     for event in pygame.event.get():
+      
+      if event.type == pygame.MOUSEBUTTONDOWN:
+        for sprite in allsprites.get_sprites_at(event.pos):
+          sprite.being_dragged = True
+
+      elif event.type == pygame.MOUSEBUTTONUP:
+        for sprite in allsprites.sprites():
+          sprite.being_dragged = False
+
       if event.type == pygame.QUIT:
           running = False
-
-    kitten.update()
 
     # draw background and text
     screen.blit(background, (0, 0))
@@ -49,8 +56,10 @@ def main():
     # Draw a solid rectangle
     pygame.draw.rect(screen, BLACK, [0, 460, 180, 40])
 
-    # render sprites and update screen
+    # update and render sprites
+    allsprites.update()
     allsprites.draw(screen) 
+
     pygame.display.update()
 
   pygame.quit() 

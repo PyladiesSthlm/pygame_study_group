@@ -6,6 +6,7 @@ class Sprite(pygame.sprite.Sprite):
     self.image = self.load_image(image_name)
     self.rect = self.image.get_rect()
     self.rect.center = (250, 250)
+    self.being_dragged = False
 
   def load_image(self, image_name):
     fullPath = os.path.join("images", image_name)
@@ -24,7 +25,8 @@ class Sprite(pygame.sprite.Sprite):
     return image
 
   def update(self):
-    self.rect.topleft = pygame.mouse.get_pos()
+    if self.being_dragged:
+      self.rect.center = pygame.mouse.get_pos()
 
 class WikipediaSprite(Sprite):
   def __init__(self, article_name):
