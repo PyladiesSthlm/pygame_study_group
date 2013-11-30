@@ -57,6 +57,8 @@ def process_file(filename, f, num=float('Inf')):
             continue
 
         # skip television shows (titles in quotation marks)
+       
+        if info == '': continue
         if info[0] == '"':
             continue
 
