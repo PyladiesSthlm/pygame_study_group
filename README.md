@@ -1,8 +1,17 @@
-* BUILDING A DATABASE *
+## BUILDING A DATABASE 
+
+Download these files: 
+
+ftp://ftp.sunet.se/pub/tv+movies/imdb/actresses.list.gz
+
+ftp://ftp.sunet.se/pub/tv+movies/imdb/actors.list.gz
+
+And start on some study material: 
 
 http://en.wikibooks.org/wiki/Think_Python/Files
 
-* BUILDING A GAME *
+
+## BUILDING A GAME 
 
 * Install dependencies with pip:
 pip install -r requirements.txt
