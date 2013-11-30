@@ -1,6 +1,7 @@
 import pygame
 
 from sprite import *
+from wikipedia_sprite import *
 from text import *
 
 WHITE = (250, 250, 250)
@@ -16,7 +17,7 @@ def main():
   background.fill(WHITE)
 
   # Create a text object at position 10, 10
-  text = Text('Pyladies', (10, 10))
+  text = Text('Pyladies!', (10, 10))
 
   # Create a sprite from a local image 
   kitten = Sprite('kitten.jpg')
@@ -49,14 +50,14 @@ def main():
       if event.type == pygame.QUIT:
           running = False
 
-    # draw background and text
+    # Draw background and text
     screen.blit(background, (0, 0))
     screen.blit(text.surface, text.position)
 
     # Draw a solid rectangle
     pygame.draw.rect(screen, BLACK, [0, 460, 180, 40])
 
-    # update and render sprites
+    # Update and render sprites
     allsprites.update()
     allsprites.draw(screen) 
 
