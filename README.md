@@ -37,3 +37,9 @@ sudo pip install hg+http://bitbucket.org/pygame/pygame
 * Then install the rest of the dependencies:
 pip install -r requirements.txt
 
+## INSTALLING PYGAME ON UBUNTU/KUBUNTU
+
+* sudo apt-get install python-pygame
+
+* Then install the rest of the dependencies:
+pip install -r requirements.txt
