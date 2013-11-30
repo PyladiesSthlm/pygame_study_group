@@ -23,3 +23,17 @@ python skeleton.py
 
 More info:
 The pygame docs can be found at: http://www.pygame.org/docs/ref/index.html
+
+## INSTALLING PYGAME ON OSX
+
+If you have issues installing the pygame depency on OSX, try: 
+
+* Install homebrew (if you don't already have it): http://brew.sh/
+
+* Open a terminal and run:
+brew install sdl sdl_image sdl_mixer sdl_ttf portmidi hg
+sudo pip install hg+http://bitbucket.org/pygame/pygame
+
+* Then install the rest of the dependencies:
+pip install -r requirements.txt
+
