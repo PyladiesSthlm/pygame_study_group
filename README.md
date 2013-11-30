@@ -1,3 +1,9 @@
+* BUILDING A DATABASE *
+
+http://en.wikibooks.org/wiki/Think_Python/Files
+
+* BUILDING A GAME *
+
 * Install dependencies with pip:
 pip install -r requirements.txt
 
